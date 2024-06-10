@@ -1,0 +1,19 @@
+import java.util.*;
+public class fibonaccirecursion {
+    int fib(int n){
+        if(n==0){
+            return 0;
+        }
+        if(n==1){
+            return 1;
+        }
+        int fibo = fib(n-1) + fib(n-2);
+        return fibo;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        fibonaccirecursion obj = new fibonaccirecursion();
+        System.out.println("Fibonacci is: "+obj.fib(n));
+    }
+}
