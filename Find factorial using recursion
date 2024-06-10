@@ -1,0 +1,16 @@
+import java.util.*;
+public class factorialrecursion {
+    int fac(int n){
+        if(n==1){
+            return 1;
+        }
+        int fact = fac(n-1) * n;
+        return fact;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        factorialrecursion obj = new factorialrecursion();
+        System.out.println("Factorial is: "+obj.fac(n));
+    }
+}
