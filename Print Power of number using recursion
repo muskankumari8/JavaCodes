@@ -1,0 +1,17 @@
+import java.util.*;
+public class recursioncube {
+    int pow(int n, int c){
+        if(c==1){
+            return n; 
+        }
+        int temp=pow(n,c-1);
+        return temp * n;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int c = sc.nextInt();
+        recursioncube obj = new recursioncube();
+        System.out.println("Output: "+obj.pow(n,c));
+    }
+}
