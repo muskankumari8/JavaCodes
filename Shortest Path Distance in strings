@@ -1,0 +1,28 @@
+import java.util.*;
+public class shortestdistance {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int x1=0;
+        int x2=0;
+        int y1=0;
+        int y2=0;
+        for(int i=0;i<str.length();i++){
+            char ch = str.charAt(i);
+            if(ch == 'W'){
+                x2--;
+            }
+            else if(ch == 'E'){
+                x2++;
+            }
+            else if(ch == 'N'){
+                y2++;
+            }
+            else {
+                y2--;
+            }
+        }
+        double dis = Math.sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1)));
+        System.out.println("Distance is: "+dis);
+    }
+}
