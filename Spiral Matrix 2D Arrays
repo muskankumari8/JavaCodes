@@ -1,0 +1,54 @@
+import java.util.*;
+public class SpiralMatrix_2DArrays {
+    static void printArray(int[][] sum){
+        for(int i=0;i<sum.length;i++){
+            for(int j=0;j<sum[i].length;j++){
+                System.out.print(sum[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+    public static void spiral(int[][] a, int r, int c){
+        int toprow = 0, leftcol = 0, bottomrow = r-1, rightcol = c-1;
+        int totalele = 0;
+        while(totalele < r * c){
+            //toprow -> leftcol to rightcol
+            for(int j=leftcol;j<=rightcol && totalele<r*c;j++){
+                System.out.print(a[toprow][j] +" ");
+                totalele++;
+            }
+            toprow++;
+            //rightcol -> toprow to bottomrow
+            for(int i=toprow;i<=bottomrow && totalele<r*c;i++){
+                System.out.print(a[i][rightcol] +" ");
+                totalele++;
+            }
+            rightcol--;
+            //bottomrow -> rightcol to leftcol
+            for(int j=rightcol;j>=leftcol && totalele<r*c;j--){
+                System.out.print(a[bottomrow][j] + " ");
+                totalele++;
+            }
+            bottomrow--;
+            for(int i=bottomrow;i>=toprow && totalele<r*c;i--){
+                System.out.print(a[i][leftcol] + " ");
+                totalele++;
+            }
+            leftcol++;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter no of rows: ");
+        int r1 = sc.nextInt();
+        System.out.println("Enter no of cols: ");
+        int c1 = sc.nextInt();
+        int[][] a = new int[r1][c1];
+        for(int i=0;i<r1;i++){
+            for(int j=0;j<c1;j++){
+                a[i][j] = sc.nextInt();
+            }
+        }
+        spiral(a,r1,c1);
+    }
+}
